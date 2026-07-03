@@ -12,9 +12,22 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('short_links', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
-        });
+        $table->id();
+
+        $table->foreignId('user_id')
+            ->constrained()
+            ->cascadeOnDelete();
+
+        $table->string('original_url');
+
+        $table->string('short_code')
+            ->unique();
+
+        $table->unsignedBigInteger('clicks_count')
+            ->default(0);
+
+        $table->timestamps();
+    });
     }
 
     /**

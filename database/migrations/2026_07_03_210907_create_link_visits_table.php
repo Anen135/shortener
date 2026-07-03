@@ -13,6 +13,15 @@ return new class extends Migration
     {
         Schema::create('link_visits', function (Blueprint $table) {
             $table->id();
+
+            $table->foreignId('short_link_id')
+                ->constrained()
+                ->cascadeOnDelete();
+
+            $table->ipAddress('ip_address');
+
+            $table->timestamp('visited_at');
+
             $table->timestamps();
         });
     }
