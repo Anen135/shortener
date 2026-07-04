@@ -21,7 +21,7 @@ class VisitsRelationManager extends RelationManager
     protected static string $relationship = 'visits';
 
     public function table(Table $table): Table
-{
+    {
         return $table
             ->columns([
                 TextColumn::make('ip_address')
