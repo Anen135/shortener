@@ -15,6 +15,7 @@ class ShortCodeGenerator
             ShortLink::where('short_code', $code)->exists()
         );
 
-        return '/s/' . $code;
+        return $code;
     }
 }
+
