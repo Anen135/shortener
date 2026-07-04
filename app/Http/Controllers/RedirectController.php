@@ -15,7 +15,7 @@ class RedirectController extends Controller
             $code
         )->firstOrFail();
 
-    LinkVisit::create([
+        LinkVisit::create([
             'short_link_id' => $link->id,
             'ip_address' => request()->ip(),
             'visited_at' => now(),

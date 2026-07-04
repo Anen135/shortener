@@ -12,7 +12,7 @@ class ShortLinkController extends Controller
             'original_url' => ['required', 'url'],
         ]);
 
-ShortLink::create([
+        return ShortLink::create([
             'user_id' => auth()->id(),
             'original_url' => $data['original_url'],
             'short_code' => app(ShortCodeGenerator::class)->generate(),

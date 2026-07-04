@@ -76,10 +76,7 @@ class ShortLinksTable
                         'x-on:open-short-link.window' => "if (\$event.detail.url === '{$url}') window.open('{$url}', '_blank')"
                     ];
                 }),
-                Action::make('stats')
-                    ->label('')
-                    ->icon('heroicon-m-chart-bar')
-                    ->url(fn ($record) => ShortLinkResource::getUrl('edit', ['record' => $record]) ),
+
             ])
             ->toolbarActions([
                 BulkActionGroup::make([

@@ -57,10 +57,6 @@ class AdminPanelProvider extends PanelProvider
             ->authMiddleware([
                 Authenticate::class,
             ])
-            ->userMenuItems([
-                'profile' => fn (Action $action) => $action
-                    ->label('Профиль')
-                    ->url(route('profile.edit')),
-            ]);
+            ->profile();
     }
 }
